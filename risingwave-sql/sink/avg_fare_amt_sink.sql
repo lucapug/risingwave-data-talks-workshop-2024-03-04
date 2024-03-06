@@ -1,4 +1,4 @@
-CREATE SINK IF NOT EXISTS avg_fare_amt_sink AS SELECT avg_fare_amount_per_hour, num_rides_per_hour FROM avg_fare_amt
+CREATE OR REPLACE SINK IF NOT EXISTS avg_fare_amt_sink AS SELECT avg_fare_amount_per_min, num_rides_per_min FROM avg_fare_amt_1_min
 WITH (
     connector = 'clickhouse',
     type = 'append-only',
